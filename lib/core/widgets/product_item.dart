@@ -19,7 +19,11 @@ class ProductItem extends StatelessWidget {
             Stack(
               clipBehavior: .none,
               children: [
-                Image.asset(product.imagePath),
+                SizedBox(
+                  height: 108,
+                  width: 96,
+                  child: Image.asset(product.imagePath),
+                ),
                 Positioned(
                   bottom: -23,
                   right: -7,

@@ -32,13 +32,19 @@ dependencies:
     sdk: flutter
 
   # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  # Use with the CupertinoIcons class for iOS style icon.
   cupertino_icons: ^1.0.8
   provider: ^6.1.5+1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/icon.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -54,15 +60,15 @@ dev_dependencies:
 flutter:
 
   # The following line ensures that the Material Icons font is
-  # included with your application, so that you can use the icons in
+  # included with your application, so that you can use the icon in
   # the material Icons class.
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
   assets:
      - assets/images/logo.png
-     - assets/images/onboarding.png
      - assets/images/app_icon.png
+     - assets/images/onboarding.png
      - assets/images/home.png
      - assets/images/category.png
      - assets/images/printer.png
@@ -73,6 +79,37 @@ flutter:
      - assets/images/milk.png
      - assets/images/tomato.png
      - assets/images/timer.png
+     - assets/images/craker.png
+     - assets/images/crakers.png
+     - assets/images/appliances.png
+     - assets/images/diyas.png
+     - assets/images/gifts.png
+     - assets/images/home_living.png
+     - assets/images/bhujiya.png
+     - assets/images/candle.png
+     - assets/images/gulab_jamun.png
+     - assets/images/atta.png
+     - assets/images/biscuit.png
+     - assets/images/dairy.png
+     - assets/images/oil.png
+     - assets/images/veg.png
+     - assets/images/dry.png
+     - assets/images/ice.png
+     - assets/images/kitchen.png
+     - assets/images/noodles.png
+     - assets/images/tea.png
+     - assets/images/beauty.png
+     - assets/images/chips.png
+     - assets/images/drinks.png
+     - assets/images/sauces.png
+     - assets/images/sweets.png
+     - assets/images/detergents.png
+     - assets/images/furnitures.png
+     - assets/images/hair-oils.png
+     - assets/images/perfumes.png
+     - assets/images/soaps.png
+     - assets/images/pages.png
+     - assets/images/mark_icon.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
