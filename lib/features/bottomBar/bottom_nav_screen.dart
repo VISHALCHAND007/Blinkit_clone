@@ -1,7 +1,9 @@
+import 'package:blinkit_clone/core/provider/product_provider.dart';
 import 'package:blinkit_clone/features/cart/cart_screen.dart';
 import 'package:blinkit_clone/features/category/category_screen.dart';
 import 'package:blinkit_clone/features/print/print_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../core/helpers/ui_helpers.dart';
 import '../home/presentation/home_screen.dart';
@@ -26,41 +28,44 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: IndexedStack(index: currentIndex, children: pages),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        backgroundColor: Colors.white,
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: .fixed,
-        onTap: (ind) {
-          setState(() {
-            currentIndex = ind;
-          });
-        },
-        items: [
-          _navItem(
-            image: "home.png",
-            label: "Home",
-            isSelected: currentIndex == 0,
-          ),
-          _navItem(
-            image: "shopping.png",
-            label: "Cart",
-            isSelected: currentIndex == 1,
-          ),
-          _navItem(
-            image: "category.png",
-            label: "Category",
-            isSelected: currentIndex == 2,
-          ),
-          _navItem(
-            image: "printer.png",
-            label: "Print",
-            isSelected: currentIndex == 3,
-          ),
-        ],
+    return ChangeNotifierProvider(
+      create: (ctx) => ProductProvider(),
+      child: Scaffold(
+        body: IndexedStack(index: currentIndex, children: pages),
+        bottomNavigationBar: BottomNavigationBar(
+          currentIndex: currentIndex,
+          backgroundColor: Colors.white,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          type: .fixed,
+          onTap: (ind) {
+            setState(() {
+              currentIndex = ind;
+            });
+          },
+          items: [
+            _navItem(
+              image: "home.png",
+              label: "Home",
+              isSelected: currentIndex == 0,
+            ),
+            _navItem(
+              image: "shopping.png",
+              label: "Cart",
+              isSelected: currentIndex == 1,
+            ),
+            _navItem(
+              image: "category.png",
+              label: "Category",
+              isSelected: currentIndex == 2,
+            ),
+            _navItem(
+              image: "printer.png",
+              label: "Print",
+              isSelected: currentIndex == 3,
+            ),
+          ],
+        ),
       ),
     );
   }
